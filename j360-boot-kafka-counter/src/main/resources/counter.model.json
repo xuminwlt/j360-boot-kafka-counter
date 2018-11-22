@@ -1,0 +1,15 @@
+{
+  "user":{
+    "follow_c": 0,
+    "follower_c":0,
+    "post":0
+  },
+  "post":{
+    "like_c":0,
+    "comment_c":0,
+    "play_c":0
+  },
+  "page":{
+    "open_c":0
+  }
+}

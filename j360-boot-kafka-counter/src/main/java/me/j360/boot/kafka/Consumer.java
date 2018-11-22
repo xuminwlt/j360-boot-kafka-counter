@@ -16,6 +16,7 @@
 
 package me.j360.boot.kafka;
 
+import me.j360.boot.kafka.manager.CounterManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -31,11 +32,14 @@ class Consumer {
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
+	@Autowired
+	private CounterManager counterManager;
 
 	@KafkaListener(topics = "testTopic")
 	public void processMessageString(String message) {
 		System.out.println("Received string sample message [" + message + "]");
 
 		System.out.println(mongoTemplate.getDb().getName());
+
 	}
 }
